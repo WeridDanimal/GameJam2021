@@ -102,11 +102,11 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     ""controlSchemes"": []
 }");
         // Gameplay map
-        m_Gameplaymap = asset.FindActionMap("Gameplay map", throwIfNotFound: true);
-        m_Gameplaymap_Jump = m_Gameplaymap.FindAction("Jump", throwIfNotFound: true);
+        m_Gameplaymap       = asset.FindActionMap("Gameplay map", throwIfNotFound: true);
+        m_Gameplaymap_Jump  = m_Gameplaymap.FindAction("Jump", throwIfNotFound: true);
         m_Gameplaymap_Slide = m_Gameplaymap.FindAction("Slide", throwIfNotFound: true);
-        m_Gameplaymap_Move = m_Gameplaymap.FindAction("Move", throwIfNotFound: true);
-        m_Gameplaymap_Tag = m_Gameplaymap.FindAction("Tag", throwIfNotFound: true);
+        m_Gameplaymap_Move  = m_Gameplaymap.FindAction("Move", throwIfNotFound: true);
+        m_Gameplaymap_Tag   = m_Gameplaymap.FindAction("Tag", throwIfNotFound: true);
     }
 
     public void Dispose()
