@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     PlayerControls controls;
     public float moveSpeed = 5f;
     public bool isCollide = false;
+    public float jumpSpeed = 5;
 
     public Rigidbody2D rb;                  // player access rigidbody
 
@@ -41,8 +42,23 @@ public class PlayerMovement : MonoBehaviour
         controls.Gameplaymap.Move.performed     += ctx => movement  = ctx.ReadValue<Vector2>();
         controls.Gameplaymap.Move.canceled      += ctx => movement  = Vector2.zero;
 
+        //new code: implement Jump function
+        controls.Gameplaymap.Jump.performed += ctx => Jump(true);
+        controls.Gameplaymap.Jump.canceled += ctx => Jump(false);
     }
 
+    void Jump(bool isJumping)
+    {
+        //jumpHeight=0
+        if(isJumping)
+        {
+            gameObject.layer = 7;
+        }
+        else
+        {
+            gameObject.layer = 6;
+        }
+    }
     void Slide(bool isSliding)
     {
         /* testing collision
@@ -59,14 +75,39 @@ public class PlayerMovement : MonoBehaviour
         if (isSliding)
         {
             gameObject.layer = 8; // layer Slide Only
+            moveSpeed = 5f;
         }
         else
         {
             gameObject.layer = 6; // layer Ground
+            moveSpeed = 20f;
         }
         print(gameObject.layer);
+        //Daniel's comment: I just realized. If the player lets go of ths slide button, it will 
+        //switch to 6. This is bad because if the player lets go while being in an obstacle they can be on,
+        //then they will be kicked off.
+
+        //proposal for change: 
+
+
+
     }
 
+    /*
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        //checks if it console outputs trigger when player is touching object
+        print("Trigger");
+
+    }
+    */
+        //New code written by Daniel:
+        /*private void OnCollisionExit(Collider2D collision)
+        {
+            //If player is out of bounds of any obstacle, 
+            //gameObject.layer=6
+        }
+        */
     void ResetCooldown()
     {
         dashCooldown = false;

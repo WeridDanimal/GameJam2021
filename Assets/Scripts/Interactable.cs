@@ -11,9 +11,16 @@ using UnityEngine;
 public abstract class Interactable : MonoBehaviour
 {
     public abstract void Interact();
+    //new code by Daniel
+    public TextMesh text1;
+    public TextMesh text2;
+    public TextMesh text3;
+    public TextMesh text4;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        //checks if it console outputs trigger when player is touching object
+        //Debug.Log("Trigger!");
         if(collision.CompareTag("Obstacle"))
         {
             //collision.GetComponent<PlayerMovement>().CheckInteract();
@@ -22,6 +29,6 @@ public abstract class Interactable : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-
+        text1.text = ("Exit");
     }
 }
