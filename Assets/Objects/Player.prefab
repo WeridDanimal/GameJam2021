@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -1382511040080411995}
   - component: {fileID: 3267149933669545676}
   - component: {fileID: 3267149933669545679}
+  - component: {fileID: 6076047192700563820}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -135,11 +136,56 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 20
+  slowSpeed: 10
+  normSpeed: 20
   isCollide: 0
-  ground: 0
-  jumpOnly: 0
-  slideOnly: 0
-  neither: 0
+  jumpSpeed: 5
   rb: {fileID: 3267149933669545676}
   ButtonCooler: 0.5
   ButtonCount: 0
+--- !u!114 &6076047192700563820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3267149933669545675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 2ff5bfbd03291e6409298bd598e8c1eb, type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ad40b67c-8cf8-4e34-8d74-250efc94e560
+    m_ActionName: Gameplay map/Jump[/XInputControllerWindows/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 9fd58f78-3231-446c-9a7e-3257a6b4490e
+    m_ActionName: Gameplay map/Slide[/XInputControllerWindows/buttonEast]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 3dd5a8fe-5680-4a7c-af5c-20d117f03bfc
+    m_ActionName: Gameplay map/Move[/XInputControllerWindows/leftStick]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 422f3004-b9e9-44d4-bdce-7be25932ad44
+    m_ActionName: Gameplay map/Tag[/XInputControllerWindows/buttonNorth]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Gameplay map
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}

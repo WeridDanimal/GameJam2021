@@ -6,7 +6,9 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     PlayerControls controls;
-    public float moveSpeed = 5f;
+    public float moveSpeed = 20f;
+    public float slowSpeed = 15f;
+    public float normSpeed = 20f;
     public bool isCollide = false;
 
     public Rigidbody2D rb;                  // player access rigidbody
@@ -43,6 +45,23 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
+<<<<<<< Updated upstream
+=======
+    void Jump(bool isJumping)
+    {
+        //jumpHeight=0
+        if(isJumping)
+        {
+            gameObject.layer = 7;
+            moveSpeed = slowSpeed;
+        }
+        else
+        {
+            gameObject.layer = 6;
+            moveSpeed = normSpeed;
+        }
+    }
+>>>>>>> Stashed changes
     void Slide(bool isSliding)
     {
         /* testing collision
@@ -59,10 +78,18 @@ public class PlayerMovement : MonoBehaviour
         if (isSliding)
         {
             gameObject.layer = 8; // layer Slide Only
+<<<<<<< Updated upstream
+=======
+            moveSpeed = slowSpeed;
+>>>>>>> Stashed changes
         }
         else
         {
             gameObject.layer = 6; // layer Ground
+<<<<<<< Updated upstream
+=======
+            moveSpeed = normSpeed;
+>>>>>>> Stashed changes
         }
         print(gameObject.layer);
     }
